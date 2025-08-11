@@ -3,28 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="sylesheet" href="src/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
   <title>Hava app</title>
 </head>
 <body>
+  <div class="weather-app">
   <header>
-    <form>
-      <input type="search" placeholder="Enter a city.." required>
-      <input type="submit" value="Search">
+    <form class="search-form">
+      <input type="search" placeholder="Enter a city.." required class="search-form-input">
+      <input type="submit" value="Search" class="search-form-button">
     </form>
   </header>
   <main>
+    <div class="weather-app-data">
     <div>
-      <h1> Paris</h1>
-      <p>
+      <h1 class="weather-app-city"> Paris</h1>
+      <p class="weather-app-details">
         Tuesday 14:49, scattered clouds <br>
-        Humidity: 66%, Wind: 3.13 km/h
+        Humidity: <strong>66%</strong>, Wind:<strong> 3.13 km/h </strong>
       </p>
     </div>
-    <div> 🌤️ 12°C</div>
+    <div class="weather-app-temperature-container"> <div class="weather-app-icon">🌤️</div>
+    <div class="weather-app-temperature"> 12</div>
+    <div class="weather-app-unit">°C</div>
+  </div>
+  </div>
   </main>
   <Footer>
     This project was coded by
@@ -32,6 +41,7 @@
     <a href="https://github.com/Nourioo/my-ptoj/blob/main/index.html" target="_blank"> Github</a> and hosted on 
     <a href="https://app.netlify.com/projects/havanet/deploys/68989803d151db26ad3e6e6e" target="_blank">Netlify. </a>
   </Footer>
-  
+
+</div>
 </body>
 </html>

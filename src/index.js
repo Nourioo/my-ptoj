@@ -1,34 +1,26 @@
-function handleSearchSubmit(event){
-    event.preventDefault();
-    let searchInput = document.querySelector("#search-form-input");
-    let cityElement = document.querySelector("#city");
-    cityElement.innerHTML = searchInput.value;
-}
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearchSubmit);
-
-function refreshWeather(response){
+function refreshWeather(response) {
     let temperatureElement = document.querySelector("#temperature");
-    let tempersture = response.data.temperature.current;
-    let cityElement= document.querySelector("#city");
+    let temperature = response.data.temperature.current;
+    let cityElement = document.querySelector("#city");
 
-    cityElement.innerHTML= response.data.city;
-    temperatureElement.innerHTML= Math.round(tempersture);
+    cityElement.innerHTML = response.data.city;
+    temperatureElement.innerHTML = Math.round(temperature);
 }
 
-function searchCity(city){
+function searchCity(city) {
     let apiKey = "540f410t39afca518e877dc5abodd75b";
-    let apiUrl= `https://api.shecodes.io/weather/v1/current?query={city}&key={apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(refreshWeather);
 }
 
-function handleSearchSubmit (event){
+function handleSearchSubmit(event) {
     event.preventDefault();
-    let searchInput= document.querySelector("#search-form-input");
-
+    let searchInput = document.querySelector("#search-form-input");
     searchCity(searchInput.value);
 }
 
-let searchFormElement= document.querySelector("#search-form");
+let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+
 searchCity("Paris");
+
